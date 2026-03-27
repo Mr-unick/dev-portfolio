@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Shield, Database, Layout } from "lucide-react";
+import { Zap, Shield, Database, Layout, Wrench, Cpu } from "lucide-react";
 
 function SkillTile({ skill, index }: { skill: any; index: number }) {
   return (
@@ -10,7 +10,7 @@ function SkillTile({ skill, index }: { skill: any; index: number }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8 }}
-      className={`studio-card flex flex-col justify-between min-h-[320px] ${skill.bg}`}
+      className={`studio-card flex flex-col justify-between min-h-[300px] ${skill.bg}`}
     >
       <div className="relative z-10">
         <div className="flex justify-between items-start mb-12">
@@ -41,9 +41,9 @@ const skillEcosystem = [
   {
     category: "Languages",
     title: "CODE.PROTOCOLS",
-    bg: "bg-amber-50/30",
+    bg: "bg-amber-50/20",
     iconBg: "bg-amber-100",
-    icon: <Zap className="w-6 h-6" />,
+    icon: <Zap className="w-5 h-5" />,
     color: "text-amber-600",
     highlights: "Building core logic with modern scripting and statically typed languages.",
     items: ["JavaScript", "TypeScript"]
@@ -51,9 +51,9 @@ const skillEcosystem = [
   {
     category: "Frontend",
     title: "VIRTUAL.DOM",
-    bg: "bg-blue-50/30",
+    bg: "bg-blue-50/20",
     iconBg: "bg-blue-100",
-    icon: <Layout className="w-6 h-6" />,
+    icon: <Layout className="w-5 h-5" />,
     color: "text-blue-600",
     highlights: "Crafting reactive, high-performance user interfaces and SPAs.",
     items: ["React.js", "Next.js", "Vue.js", "Tailwind CSS"]
@@ -61,22 +61,42 @@ const skillEcosystem = [
   {
     category: "Backend",
     title: "SERVER.NODE",
-    bg: "bg-emerald-50/30",
+    bg: "bg-emerald-50/20",
     iconBg: "bg-emerald-100",
-    icon: <Shield className="w-6 h-6" />,
+    icon: <Shield className="w-5 h-5" />,
     color: "text-emerald-600",
     highlights: "Designing high-scale APIs and multi-tenant backend architectures.",
     items: ["Node.js", "Express.js", "Laravel", "TypeORM"]
   },
   {
-    category: "Infrastructure",
+    category: "Database",
     title: "DATA.SCHEMA",
-    bg: "bg-purple-50/30",
+    bg: "bg-purple-50/20",
     iconBg: "bg-purple-100",
-    icon: <Database className="w-6 h-6" />,
+    icon: <Database className="w-5 h-5" />,
     color: "text-purple-600",
-    highlights: "Managing high-availability databases and server deployment stacks.",
-    items: ["MySQL", "MongoDB", "Oracle", "PM2", "Nginx", "VPS"]
+    highlights: "Managing high-availability databases and relational data schemas.",
+    items: ["MySQL", "MongoDB", "Oracle"]
+  },
+  {
+    category: "Tools",
+    title: "DEV.ENV",
+    bg: "bg-rose-50/20",
+    iconBg: "bg-rose-100",
+    icon: <Wrench className="w-5 h-5" />,
+    color: "text-rose-600",
+    highlights: "Deployment, server management, and version control tools.",
+    items: ["Git", "PM2", "Nginx", "VPS Deployment"]
+  },
+  {
+    category: "Concepts",
+    title: "SYSTEM.ARCH",
+    bg: "bg-slate-50/20",
+    iconBg: "bg-slate-100",
+    icon: <Cpu className="w-5 h-5" />,
+    color: "text-slate-600",
+    highlights: "Core engineering principles for scalable and secure applications.",
+    items: ["REST APIs", "Multi-tenant", "RBAC"]
   }
 ];
 
@@ -86,14 +106,14 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col mb-16 md:mb-24 px-4 text-center items-center">
            <div className="eng-mono text-[#86868b] mb-4 md:mb-6">&bull; Technical Ecosystem</div>
-           <h2 className="text-5xl md:text-6xl font-black tracking-[-0.05em] text-[#1d1d1f] uppercase">
+           <h2 className="text-5xl md:text-6xl font-black tracking-[-0.05em] text-[#1d1d1f] uppercase px-0">
              THE <span className="gradient-text">TOOLCHAIN.</span>
            </h2>
         </div>
 
         <div className="bento-grid">
           {skillEcosystem.map((s, idx) => (
-            <div key={idx} className="col-span-1 md:col-span-6 lg:col-span-3">
+            <div key={idx} className="col-span-1 md:col-span-6 lg:col-span-4">
                <SkillTile skill={s} index={idx} />
             </div>
           ))}

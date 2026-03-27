@@ -81,10 +81,10 @@ export default function Hero() {
               </div>
             </SystemCard>
 
-            <SystemCard className="flex flex-col justify-between min-h-[220px] md:min-h-[240px] bg-[#1d1d1f] text-white border-none shadow-2xl">
-              <div className="eng-mono text-white/40">Core Specialization</div>
-              <div className="text-4xl font-black tracking-[-0.05em] leading-none uppercase">SaaS <br /> ARCHITECTURE</div>
-              <div className="eng-mono text-white/60 font-black italic">PROD-READY // 2024-2026</div>
+            <SystemCard className="flex flex-col justify-between min-h-[220px] md:min-h-[240px]">
+              <div className="eng-mono">Core Specialization</div>
+              <div className="text-4xl font-black tracking-[-0.05em] leading-none uppercase text-[#1d1d1f]">SaaS <br /> ARCHITECTURE</div>
+              <div className="eng-mono font-black italic text-[#1d1d1f]">PROD-READY // 2024-2026</div>
             </SystemCard>
           </div>
         </div>
